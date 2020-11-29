@@ -10,20 +10,6 @@ import java.util.*;
 
 public class DirectoryReader implements Constants {
 
-    public static void readDir() {
-        int i;
-        HashSet<Flight> flight_Set;
-        File files[] = file.listFiles();
-        for (i = 0; i < files.length; i++) {
-            System.out.println("Reading File : " + files[i]);
-            flight_Set = readFile(files[i]);
-            synchronized (Main.flights) {
-                Main.flights.put(files[i].getName(), flight_Set);
-            }
-        }
-        System.out.println("Read All CSV Files");
-    }
-
     public static HashSet<Flight> readFile(File file) {
         BufferedReader reader = null;
         HashSet<Flight> flight_Set = new HashSet<Flight>();
@@ -73,10 +59,7 @@ public class DirectoryReader implements Constants {
 
         String avail = st.nextToken();
         Boolean seatAvailability;
-        if (avail.charAt(0) == 'Y')
-            seatAvailability = true;
-        else
-            seatAvailability = false;
+        seatAvailability = avail.charAt(0) == 'Y';
 
         String flightType = st.nextToken();
 

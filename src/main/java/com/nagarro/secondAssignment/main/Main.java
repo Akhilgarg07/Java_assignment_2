@@ -1,6 +1,7 @@
 package com.nagarro.secondAssignment.main;
 
 import com.nagarro.secondAssignment.comparator.FlightPriceComparator;
+import com.nagarro.secondAssignment.comparator.FlightDurationComparator;
 import com.nagarro.secondAssignment.entity.Flight;
 import com.nagarro.secondAssignment.entity.UserInput;
 import com.nagarro.secondAssignment.input.InputAccept;
@@ -20,7 +21,7 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<Flight> result = new ArrayList<>();
-        String choice = null;
+        String choice;
         UserInput userInput;
 
         ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
@@ -48,7 +49,7 @@ public class Main {
             if (userInput.getOutputPreference() == 1) {
                 Collections.sort(result, new FlightPriceComparator());
             } else {
-                Collections.sort(result, new FlightPriceComparator());
+                Collections.sort(result, new FlightDurationComparator());
             }
             System.out.println("\nResult:");
             for (Flight f : result) {

@@ -2,21 +2,21 @@ package com.nagarro.secondAssignment.input;
 
 import com.nagarro.secondAssignment.constants.Constants;
 import com.nagarro.secondAssignment.entity.UserInput;
-import com.nagarro.secondAssignment.validate.UserInputValidator;
+import main.java.com.nagarro.secondAssignment.validate.UserInputValidator;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Date;
 
-public class InputAccept  implements Constants {
+public class InputAccept implements Constants {
     public static UserInput enterInput() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String source;
         String destination;
         String flightClass;
         int outputPreference;
-        Date flightDate = null;
+        Date flightDate;
 
         System.out.println("Departure Location: ");
         while ((source = UserInputValidator.validateSource(br.readLine())) == null)

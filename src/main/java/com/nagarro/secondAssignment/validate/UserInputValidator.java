@@ -1,4 +1,4 @@
-package com.nagarro.secondAssignment.validate;
+package main.java.com.nagarro.secondAssignment.validate;
 
 import com.nagarro.secondAssignment.constants.Constants;
 import com.nagarro.secondAssignment.entity.Flight;

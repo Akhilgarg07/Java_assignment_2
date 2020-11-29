@@ -4,9 +4,7 @@ import com.nagarro.secondAssignment.constants.Constants;
 
 import java.util.Date;
 
-public class Flight  implements Constants{
-
-
+public class Flight implements Constants {
 
 
     public String getFlightNo() {
